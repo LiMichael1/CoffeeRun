@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <title>Coffee Run</title>
+</head>
+<body class="container">
+    <header>
+        <h1>Coffee Run</h1>
+    </header>
+    <section>
+        <div class="card card-default">
+            <div class="card-body">
+                <form data-coffee-order="form">
+                    <div class="form-group">
+                        <label for="coffeeOrder">Coffee Order</label>
+                        <input type="text" class="form-control" name="coffee" id="coffeeOrder" autofocus required pattern="[a-zA-Z\s]+" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailInput">Email</label>
+                        <input type="email" class="form-control" name="emailAddress" id="emailInput" value="" placeholder="dr@who.com" required>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="short">
+                            Short
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="tall" checked>
+                            Tall
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="size" value="grande">
+                            Grande
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="flavorShot">Flavor Shot</label>
+                        <select class="form-control" name="flavor" id="flavorShot">
+                            <option value="">None</option>
+                            <option value="caramel">Caramel</option>
+                            <option value="almond">Almond</option>
+                            <option value="mocha">Mocha</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="strengthLevel">Caffeine Ratings</label>
+                        <input class="form-control" type="range" name="strength" id="strengthLevel" value="30">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="reset" class="btn btn-danger">Reset</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="card card-default">
+            <div class="card-body">
+                <h4>Pending Orders</h4>
+                <div data-coffee-order="checklist">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" charset="utf-8"></script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAj3fQ-Gz_dK4C-rBNlEs6bSx4brrLc7po",
+            authDomain: "coffee-run-fc62b.firebaseapp.com",
+            databaseURL: "https://coffee-run-fc62b.firebaseio.com",
+            projectId: "coffee-run-fc62b",
+            storageBucket: "coffee-run-fc62b.appspot.com",
+            messagingSenderId: "513992835366",
+            appId: "1:513992835366:web:3352d8581e9aa9cf8601e7",
+            measurementId: "G-1XLYV9EL09"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="scripts/validation.js" charset="utf-8"></script>
+    <script src="scripts/checklist.js" charset="utf-8"></script>
+    <script src="scripts/formhandler.js" charset="utf-8"></script>
+    <script src="scripts/remotedatastore.js" charset="utf-8"></script>
+    <script src="scripts/datastore.js" charset="utf-8"></script>
+    <script src="scripts/truck.js" charset="utf-8"></script>
+    <script src="scripts/main.js" charset="utf-8"></script>
+</body>
+</html>
